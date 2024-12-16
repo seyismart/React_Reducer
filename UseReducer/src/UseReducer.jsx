@@ -1,10 +1,7 @@
 // Reducer function to handle actions
 
 export const Reducer = (state, action) => {
-   
-    console.log(state);
-    
-    
+     
 switch (action.type) {
     case 'ADD_NAME':
         return [...state,{
@@ -12,13 +9,17 @@ switch (action.type) {
             name: action.payload
         }]
         
-    case 'DELETE_NAME':
-    return{};
+    case "DELETE_NAME":
+        return state.filter(item => item.id !== action.payload.id)
+
 
 case 'UPDATE_NAME':
         break;
 
     default:
-        break;
+        return state 
 }
 }
+
+let arr = [2,3,45,100]
+arr.filter(res => res > 2)
